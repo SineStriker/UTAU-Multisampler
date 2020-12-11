@@ -4,9 +4,11 @@ UTAU Multi-resampler helper
 ## Description
 There is no resampling function in itself, but other resampler can be linked through Flags.
 
-
 ## Preparation
-1. Create a new text file in the directory "C:\ProgramData\UTAU Plugin\Multisampler". Enter the following and save as config.ini. (The charset must be ANSI)
+1. Create a new text file in the directory "C:\ProgramData\UTAU Plugin\Multisampler".
+2. You may need to add the subdirectories manually.
+3. Input lines like following and save as "config.ini".
+4. The charset must be ANSI.
 
 ```
 [Settings]
@@ -20,29 +22,27 @@ Default=1
 3=D:\UTAU\tools\tn_fnds.exe
 ```
 
-“Resamplers”下方是Multisampler可以读取的重采样器的路径（必须是绝对路径），按照这个格式可以添加任意多个重采样器，序号必须从0开始，依次递增，必须是连续的自然数。
+## Instructions
+*Below "Resamplers" is the path of the resamplers that Multisampler can detect(must be the absolute path). Resamplers can be added in this format. The serial number must start from 0 and increase successively, and must be a continuous natural number.
+*Below "Settings" are the default Settings。
+*"Prefix" is the **Flags** of Multisampler, the default is ***"r"*** and can be modified by yourself. ***"r0"*** means using a resampler of number 0.
+*"Default" is the resamplers number used by default (the resamplers must be specified below "Resamplers").
 
-“Settings”下方是默认设置。
+## How To Use
+Suppose the **Prefix** is ***"r"***
 
-“Prefix”是Multisampler的Flags，默认是“r”，可以自行修改，Flags“r0”表示使用序号为0的重采样器。
+Change the **"Tool 2(Resample)"** to Multisampler (Multisampler can be placed anywhere) in project property of UTAU.
 
-“Default”是默认使用的重采样器序号（该重采样器必须是“Resamplers”下方指定的）。
+If you want to use a resampler globally (such as a resampler of number 1), global Flags ***"r1"*** can be added to the output option of the project property. If more than one ***"r"*** arguments are added, the rest will be ignored.
 
+If the "R" parameter is not added globally, the resampler specified by "Default" will be used globally.
 
-- 用法（以“r”为例）
+If you want to use another resampler to render a certain note (such as a resampler of number 2), add ***"r2"*** to the Flags of this note. If more than one ***"r"*** arguments are added, the rest will be ignored.
 
-在UTAU中，工程属性中将第二个工具（Tool 2 Resample）设为Multisampler（Multisampler可以放在任意位置）。
+Meanwhile, once an ***"r"*** argument (valid or not) is added to the note, global Flags will be ignored on this note.
 
-如果UST全局要使用某个重采样器（如序号为1的重采样器），可以在工程属性的输出选项中添加全局Flags“r1”，如果添加了多个“r”参数，则后面的会全部被忽略。
+If a note has an ***"r"*** parameter added, but the resampler specified by this Flag does not exist (invalid), then the global resampler will be used on this note.
 
-如果全局没有添加“r”参数，那么全局使用“Default”指定的重采样器。
+If the project has an ***"r"*** parameter added，but the resampler specified by this Flag does not exist (invalid), then the default resampler will be used as global resampler.
 
-如果某个音符要使用其他重采样器（如序号为2的重采样器），可以在这个音符的Flags中添加“r2”，如果添加了多个“r”参数，则后面的会全部被忽略。
-
-同时，一个音符一旦添加“r”参数（不管是否有效），那么全局Flags将对它不起作用。
-
-如果音符添加了“r”参数，但是该序号的重采样器不存在（无效），那么使用全局重采样器。
-
-如果全局添加了“r”参数，但是该序号的重采样器不存在（无效），那么使用“Default”指定的重采样器。
-
-如果“Default”指定的重采样器也不存在，那么Multisampler将会停止工作。
+If the resampler specified in "Default" needs using but does not exist (invalid), the Multisampler will stop working.
