@@ -1,21 +1,14 @@
 # UTAU-Multisampler
 UTAU Multi-resampler helper
 
-- Multisampler（多重采样器）
+## Description
+There is no resampling function in itself, but other resampler can be linked through Flags.
 
 
-- 功能
+## Preparation
+1. Create a new text file in the directory "C:\ProgramData\UTAU Plugin\Multisampler". Enter the following and save as config.ini. (The charset must be ANSI)
 
-本身不具有重采样功能，可以通过Flags链接其他重采样器的辅助工具。
-
-
-
--准备
-
-首先在“C:\ProgramData\UTAU Plugin\Multisampler”目录中新建一个文本文档，在里面输入以下内容并保存为config.ini，编码选择ANSI。
-
-————————————————————————————
-
+```
 [Settings]
 Prefix=r
 Default=1
@@ -25,8 +18,7 @@ Default=1
 1=D:\UTAU\tools\moresampler.exe
 2=D:\UTAU\tools\TIPS.exe
 3=D:\UTAU\tools\tn_fnds.exe
-
-————————————————————————————
+```
 
 “Resamplers”下方是Multisampler可以读取的重采样器的路径（必须是绝对路径），按照这个格式可以添加任意多个重采样器，序号必须从0开始，依次递增，必须是连续的自然数。
 
