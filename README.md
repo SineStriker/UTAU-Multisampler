@@ -23,10 +23,10 @@ Default=1
 ```
 
 ## Instructions
-*Below "Resamplers" is the path of the resamplers that Multisampler can detect(must be the absolute path). Resamplers can be added in this format. The serial number must start from 0 and increase successively, and must be a continuous natural number.
-*Below "Settings" are the default Settings。
-*"Prefix" is the **Flags** of Multisampler, the default is ***"r"*** and can be modified by yourself. ***"r0"*** means using a resampler of number 0.
-*"Default" is the resamplers number used by default (the resamplers must be specified below "Resamplers").
+* Below "Resamplers" is the path of the resamplers that Multisampler can detect(must be the absolute path). Resamplers can be added in this format. The serial number must start from 0 and increase successively, and must be a continuous natural number.
+* Below "Settings" are the default Settings。
+* "Prefix" is the **Flags** of Multisampler, the default is ***"r"*** and can be modified by yourself. ***"r0"*** means using a resampler of number 0.
+* "Default" is the resamplers number used by default (the resamplers must be specified below "Resamplers").
 
 ## How To Use
 Suppose the **Prefix** is ***"r"***
