@@ -29,20 +29,20 @@ Default=1
 * "Default" is the resamplers number used by default (the resamplers must be specified below "Resamplers").
 
 ## How To Use
-Suppose the **Prefix** is ***"r"***
+* Suppose the **Prefix** is ***"r"***
 
-Change the **"Tool 2(Resample)"** to Multisampler (Multisampler can be placed anywhere) in project property of UTAU.
+* Change the **"Tool 2(Resample)"** to Multisampler (Multisampler can be placed anywhere) in project property of UTAU.
 
-If you want to use a resampler globally (such as a resampler of number 1), global Flags ***"r1"*** can be added to the output option of the project property. If more than one ***"r"*** arguments are added, the rest will be ignored.
+* If you want to use a resampler globally (such as a resampler of number 1), global Flags ***"r1"*** can be added to the output option of the project property. If more than one ***"r"*** arguments are added, the rest will be ignored.
 
-If the "R" parameter is not added globally, the resampler specified by "Default" will be used globally.
+* If the "R" parameter is not added globally, the resampler specified by "Default" will be used globally.
 
-If you want to use another resampler to render a certain note (such as a resampler of number 2), add ***"r2"*** to the Flags of this note. If more than one ***"r"*** arguments are added, the rest will be ignored.
+* If you want to use another resampler to render a certain note (such as a resampler of number 2), add ***"r2"*** to the Flags of this note. If more than one ***"r"*** arguments are added, the rest will be ignored.
 
-Meanwhile, once an ***"r"*** argument (valid or not) is added to the note, global Flags will be ignored on this note.
+* Meanwhile, once an ***"r"*** argument (valid or not) is added to the note, global Flags will be ignored on this note.
 
-If a note has an ***"r"*** parameter added, but the resampler specified by this Flag does not exist (invalid), then the global resampler will be used on this note.
+* If a note has an ***"r"*** parameter added, but the resampler specified by this Flag does not exist (invalid), then the global resampler will be used on this note.
 
-If the project has an ***"r"*** parameter added，but the resampler specified by this Flag does not exist (invalid), then the default resampler will be used as global resampler.
+* If the project has an ***"r"*** parameter added，but the resampler specified by this Flag does not exist (invalid), then the default resampler will be used as global resampler.
 
-If the resampler specified in "Default" needs using but does not exist (invalid), the Multisampler will stop working.
+* If the resampler specified in "Default" needs using but does not exist (invalid), the Multisampler will stop working.
